@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!-- <link rel="stylesheet" href="index.css">     ###aqui é a linha que NORMALMENTE usamos para estilizar, porém estamos usando Bootstrap nesse projeto-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+    <header>Bootstrap</header>
+<body>
+    <h1>Olá, Bootstrap!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">Coluna</div>
+            <div class="col">Coluna</div>
+            <div class="col">Coluna</div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">Coluna</div>
+            <div class="col">Coluna</div>
+            <div class="col">Coluna</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<style>
+    html,body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        background-color: rgb(238, 255, 0);
+        height: 800px;
+    }
+
+    .row {
+        background-color: blueviolet;
+    }
+
+    .col {
+        background-color: rgb(21, 255, 0);
+        border: 1px solid black
+    }
+
+    .col-10 {
+        background-color: rgb(133, 247, 255);
+        border: 1px solid black
+    }
+
+    .col-2 {
+        background-color: rgb(255, 0, 0);
+        border: 2px solid rgb(255, 255, 255);
+        color: white;
+
+    }
+</style>
+</html>
