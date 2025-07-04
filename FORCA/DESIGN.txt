@@ -1,0 +1,4 @@
+Jogo de Forca:
+
+- O usuário deverá se identificar
+- 
