@@ -1,4 +1,16 @@
 Jogo de Forca:
 
 - O usuário deverá se identificar
+	> inserir seu nome
+
+- O sistema irá saudar o usuário e informar que já escolheu uma palavra.
+	> sugestão: "Bem-vindo [Fulano].  Vamos jogar FORCA?
+			Eu escolho a palavra e você tenta adivinhar.
+			Já escolhi a palavra."
+
+- o jogo iniciará informando os temas disponíveis.
+
+- o usuário escolherá seu tema.
+
 - 
+
