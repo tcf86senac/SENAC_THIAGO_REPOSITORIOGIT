@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">          <!-- serve para informar ao navegador qual é a codificação de caracteres que o documento está usando. -->      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hortourbano</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav id="minhaNavbar" class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./logo.jpg" alt="Colorful letter A logo" style="height: 40px; margin-right: 10px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Técnicas de Plantio
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Tutoriais passo a passo para diferentes plantas">
+                                    Guia de Cultivo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Quando semear/plantar por estação">
+                                    Calendário de Plantio
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Identificação e tratamento orgânico">
+                                    Soluções para Pragas
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Plantas que se beneficiam mutuamente">
+                                    Combinações de Plantas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown2
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                    <!-- 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown3
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+            <!-- fim das dropdowns -->
+
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="O quê procura?" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="submit" style="background-color: rgb(91,116,95); border-color: white; color: white;">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+                <!-- CARROSSEL -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://blog.neteletrica.com.br/wp-content/uploads/2019/07/shutterstock_475483222.jpg" class="d-block w-100" alt="Ferramentas de Jardinagem">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ferramentas de Jardinagem</h5>
+                    <a href="https://www.leroymerlin.com.br/ferramentas-manuais-para-jardim" class="btn btn-primary">Ver mais</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.rivaincorporadora.com.br/wp-content/uploads/2024/08/JardimdeInverno.jpg" class="d-block w-100" alt="Plantas">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Plantas</h5>
+                    <a href="https://www.leroymerlin.com.br/flores-e-plantas-naturais" class="btn btn-primary">Ver mais</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cm-cinfaes.pt/templates/yootheme/cache/8b/procedimento-concursal-jardineiro-8b5d4560.webp" class="d-block w-100" alt="Estufas">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Adubos e Fertilizantes</h5>
+                    <a href="https://www.leroymerlin.com.br/search?term=adubo&searchTerm=adubo&searchType=default" class="btn btn-primary">Ver mais</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+                <!-- CARDS -->
+
+    <!-- Seção principal de cards -->
+<div id="cardsprincipais" class="container mt-4"> <!-- Container centralizado com margem no topo -->
+    <div class="row"> <!-- Linha do grid Bootstrap -->
+
+        <!-- Card 1 - Ferramentas -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4"> <!-- Coluna: 1 coluna em mobile, 2 em tablet, 3 em desktop -->
+            <div class="card" style="width: 300px;"> <!-- Card com largura fixa de 300px -->
+                <img src="https://cdn.leroymerlin.com.br/products/conjunto_de_ferramentas_4_pecas_para_vaso_85258320_5fb0_600x600.jpg"
+                     class="card-img-top"
+                     alt="Ferramentas de Jardinagem"
+                     style="height: 300px; object-fit: cover;"> <!-- Altura fixa e ajuste de imagem -->
+                <div class="card-body p-0"> <!-- Corpo do card sem padding -->
+                    <a href="https://www.leroymerlin.com.br/ferramentas-manuais-para-jardim"
+                       class="btn btn-primary w-100 rounded-0"> <!-- Botão com largura total e sem bordas arredondadas -->
+                       Ferramentas de Jardinagem
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 - Plantas -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4"> <!-- Mesmo sistema de colunas -->
+            <div class="card" style="width: 300px;">
+                <img src="https://cdn.awsli.com.br/600x700/1664/1664922/produto/331109573/vaso-polietileno-kit-decoracao-paisagismo-jardim--1--h0ee0g37jm.jpg"
+                     class="card-img-top"
+                     alt="Plantas"
+                     style="height: 300px; object-fit: cover;">
+                <div class="card-body p-0">
+                    <a href="https://www.leroymerlin.com.br/flores-e-plantas-naturais"
+                       class="btn btn-primary w-100 rounded-0">
+                       Plantas
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 - Estufas -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card" style="width: 300px;">
+                <img src="https://www.nesselugar.com.br/wp-content/uploads/2022/11/mini-estufa-de-madeira.png"
+                     class="card-img-top"
+                     alt="Estufas"
+                     style="height: 300px; object-fit: cover;">
+                <div class="card-body p-0">
+                    <a href="https://www.leroymerlin.com.br/ferramentas-manuais-para-jardim"
+                       class="btn btn-primary w-100 rounded-0">
+                       Estufas
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        <!-- fim de cards -->
+    </div> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer>
+  <H1>teste</H1>
+</footer>
+
+<style>
+    #minhaNavbar {
+        background-color: rgb(91,116,95); 
+    }
+
+    /* Estilo para garantir que as imagens do carrossel preencham bem */
+    .carousel-item img {
+        height: 720px; /* Altura fixa para as imagens do carrossel */
+        object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    }
+
+    /* Estilo para a legenda do carrossel (opcional, para melhor legibilidade) */
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
+
+<script>
+    // Ativa os tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, {
+                trigger: 'hover' // Aparece apenas ao passar o mouse
+            });
+        });
+    });
+</script>
+</html>
