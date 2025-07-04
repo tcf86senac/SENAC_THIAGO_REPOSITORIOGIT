@@ -2,6 +2,10 @@
 
 - PRINT "Bem-vindo [Fulano].  Vamos jogar FORCA?"
 	    "Eu escolho a palavra e você tenta adivinhar."
-		"Já escolhi a palavra."
+		
+- PRINT com os TEMAS que estarão disponíveis no jogo (Arquivo temas.txt)
 
-- PRINT com os TEMAS que estarão disponíveis no jogo   
+- INPUT solicitando que o usuário escolha o tema
+
+- PRINT sistema informando que escoleu a palavra e dizendo quantas letras ela tem
+
