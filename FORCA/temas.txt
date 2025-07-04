@@ -1,0 +1,119 @@
+1. Animais
+– Girafa
+– Tartaruga
+– Elefante
+– Borboleta
+– Rinoceronte
+– Pinguim
+– Crocodilo
+– Arara
+– Camaleão
+– Ornitorrinco
+
+2. Comidas
+– Abacaxi
+– Espaguete
+– Chocolate
+– Panqueca
+– Hambúrguer
+– Sushi
+– Açaí
+– Brócolis
+– Lasanha
+– Tapioca
+
+3. Países
+– Canadá
+– Austrália
+– Argentina
+– Japão
+– Noruega
+– Egito
+– Madagascar
+– Islândia
+– Tailândia
+– Suíça
+
+4. Profissões
+– Dentista
+– Astronauta
+– Carteiro
+– Bailarina
+– Engenheiro
+– Jornalista
+– Pintor
+– Bombeiro
+– Programador
+– Agricultor
+
+5. Esportes
+– Basquete
+– Natação
+– Vôlei
+– Judô
+– Ciclismo
+– Golfe
+– Boxe
+– Skate
+– Tênis
+– Hipismo
+
+6. Objetos do Cotidiano
+– Ventilador
+– Guarda-chuva
+– Cadeado
+– Espelho
+– Lâmpada
+– Chaveiro
+– Relógio
+– Travesseiro
+– Pincel
+– Óculos
+
+7. Filmes Famosos
+– Titanic
+– Matrix
+– Frozen
+– Avatar
+– Shrek
+– Jurassic
+– Batman
+– Moana
+– Toy
+– Star
+
+8. Partes do Corpo
+– Cotovelo
+– Cílios
+– Tornozelo
+– Joelho
+– Pupila
+– Ombros
+– Quadril
+– Panturrilha
+– Íris
+– Axila
+
+9. Instrumentos Musicais
+– Violino
+– Harpa
+– Trombone
+– Flauta
+– Bateria
+– Saxofone
+– Cavaquinho
+– Gaita
+– Xilofone
+– Bandolim
+
+10. Natureza
+– Vulcão
+– Cachoeira
+– Deserto
+– Aurora
+– Oceano
+– Tempestade
+– Geleira
+– Savana
+– Arco-íris
+– Neblina
