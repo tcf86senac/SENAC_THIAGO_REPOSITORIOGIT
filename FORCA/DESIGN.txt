@@ -14,15 +14,17 @@ Jogo de Forca:
 
 - o sistema informará que já escolheu a palavra dentro do tema e informará quantas letras ela tem.
 
-- Regras do jogo.
-	o usuário palpitará quais as letras compoem a palavra.  
-		Se a letra escolhida existir na palavra ela deverá ser adicionada na sua respectiva posição e este resultado se manterá visível para o usuário. 
-			Nessa etapa ele terá apenas seis (06) chances de errar
-				cada erro corresponde a uma parte do "corpo" que é riscada (pés, tronco, braços e cabeça)
-					caso ele erre as seis (06) vezes será decretada a derrota.
-		
-						
-		
-	
+- Objetivos do jogo:
+	Acertar a palavra escolhida pelo sistema através de palpites das letras que compoem a palavra.
+		O jogador será "eliminado" se errar seis letras da palavra.
+		Se ele conseguir através dos palpites acertar todas as letras para formar a palavra ele vencerá.
+			Existe a possibilidade de, com algumas letras já posicionadas mediante acerto, o jogador conseguir adivinhar toda a palavra.
+		 	para isso, disponibilize um "botão" que permita que o jogador chute a palavra completa.
+
+- Ações:
+	1 - Chutar 1 letra
+	2 - Tentar adivinhar a palavra toda
+
+
 
 
