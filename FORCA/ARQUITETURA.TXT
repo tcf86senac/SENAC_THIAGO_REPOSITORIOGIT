@@ -14,3 +14,8 @@
 
 - PRINT sistema informando que escolheu a palavra e dizendo quantas letras ela tem
 
+- Uso de condicionais e comando de pertinência para verificar se a letra escolhida compõe a palavra 
+
+- Caso usuário acerte a todas as letras da palavra, o jogador ganha
+
+- Caso usuário erre alguma letra, um contador com 06 tentantivas vai diminuir em 1
