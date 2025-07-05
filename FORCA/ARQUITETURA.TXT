@@ -19,3 +19,5 @@
 - Caso usuário acerte a todas as letras da palavra, o jogador ganha
 
 - Caso usuário erre alguma letra, um contador com 06 tentantivas vai diminuir em 1. Se o contador zerar, o usuário perde.
+
+- Utilizar "-" conforme quantidade de letras para formar a palavra oculta e substituir "-" pela letra conforme o usuário acerte.
