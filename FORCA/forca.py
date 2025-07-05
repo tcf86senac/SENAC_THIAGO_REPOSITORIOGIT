@@ -16,4 +16,16 @@ for i in forca:
     tracinho = tracinho + '-'
 
 print(tracinho)
+tracinho_in_game = list(tracinho)
+print(tracinho_in_game)
 
+while True:
+    vidas = 6
+    if vidas == 0:
+        print("Você morreu...")
+    else:
+        letra = input("Escolha uma letra.")
+        for i in range(len(forca)):
+            if letra == forca[i]:
+                pass
+                
