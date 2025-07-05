@@ -18,4 +18,4 @@
 
 - Caso usuário acerte a todas as letras da palavra, o jogador ganha
 
-- Caso usuário erre alguma letra, um contador com 06 tentantivas vai diminuir em 1
+- Caso usuário erre alguma letra, um contador com 06 tentantivas vai diminuir em 1. Se o contador zerar, o usuário perde.
