@@ -21,6 +21,8 @@ Jogo de Forca:
 				cada erro corresponde a uma parte do "corpo" que é riscada (pés, tronco, braços e cabeça)
 					caso ele erre as seis (06) vezes será decretada a derrota.
 		
+						
+		
 	
 
 
