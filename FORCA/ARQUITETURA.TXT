@@ -1,7 +1,16 @@
+- Importar biblioteca random
+
 - INPUT solicitando que usuário digite o nome
 
 - PRINT "Bem-vindo [Fulano].  Vamos jogar FORCA?"
-	    "Eu escolho a palavra e você tenta adivinhar."
-		"Já escolhi a palavra."
+		"Você escolhe o tema, eu escolho a palavra."
+		"Vamos começar!"
+		
+- Criar uma lista com os temas que estarão disponíveis no jogo (Arquivo temas.txt)
 
-- PRINT com os TEMAS que estarão disponíveis no jogo   
+- INPUT solicitando que o usuário escolha o tema
+
+- Utilizar a biblioteca random para escolha da palavra dentro do tema
+
+- PRINT sistema informando que escolheu a palavra e dizendo quantas letras ela tem
+
