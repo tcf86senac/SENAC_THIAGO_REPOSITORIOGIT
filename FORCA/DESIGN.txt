@@ -27,4 +27,4 @@ Jogo de Forca:
 
 
 
-
+.
