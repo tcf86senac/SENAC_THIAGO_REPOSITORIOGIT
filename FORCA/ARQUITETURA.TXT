@@ -1,1 +1,11 @@
-INPUT solicitando que usuário digite o nome;
+- INPUT solicitando que usuário digite o nome
+
+- PRINT "Bem-vindo [Fulano].  Vamos jogar FORCA?"
+	    "Eu escolho a palavra e você tenta adivinhar."
+		
+- PRINT com os TEMAS que estarão disponíveis no jogo (Arquivo temas.txt)
+
+- INPUT solicitando que o usuário escolha o tema
+
+- PRINT sistema informando que escoleu a palavra e dizendo quantas letras ela tem
+
