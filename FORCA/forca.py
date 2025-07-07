@@ -12,7 +12,7 @@ def escolhas_jogo(vidas):
         else:
             for i in range(len(tracinho_in_game)):
                 if letra_chute == forca[i]:
-                    tracinho
+                    tracinho[i] = letra_chute
 
 
 
