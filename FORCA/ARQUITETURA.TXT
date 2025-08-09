@@ -1,0 +1,25 @@
+- Importar biblioteca random
+
+- INPUT solicitando que usuário digite o nome
+
+- PRINT "Bem-vindo [Fulano].  Vamos jogar FORCA?"
+		"Você escolhe o tema, eu escolho a palavra."
+		"Vamos começar!"
+		
+- Criar uma lista com os temas que estarão disponíveis no jogo (Arquivo temas.txt)
+
+- INPUT solicitando que o usuário escolha o tema
+
+- Utilizar a biblioteca random para escolha da palavra dentro do tema
+
+- PRINT sistema informando que escolheu a palavra e dizendo quantas letras ela tem
+
+- Uso de condicionais e comando de pertinência para verificar se a letra escolhida compõe a palavra 
+
+- Caso usuário acerte a todas as letras da palavra, o jogador ganha
+
+- Caso usuário erre alguma letra, um contador com 06 tentantivas vai diminuir em 1. Se o contador zerar, o usuário perde.
+
+- Utilizar "-" conforme quantidade de letras para formar a palavra oculta e substituir "-" pela letra conforme o usuário acerte.
+
+- Criar um menu com as opções (1 - Chutar uma Letra / 2 - Chutar a palavra inteira )
