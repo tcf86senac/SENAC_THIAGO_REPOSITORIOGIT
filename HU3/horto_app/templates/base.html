@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">          <!-- serve para informar ao navegador qual é a codificação de caracteres que o documento está usando. -->      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hortourbano</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav id="minhaNavbar" class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="Colorful letter A logo" style="height: 40px; margin-right: 10px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Técnicas de Plantio
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Tutoriais passo a passo para diferentes plantas">
+                                    Guia de Cultivo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Quando semear/plantar por estação">
+                                    Calendário de Plantio
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Identificação e tratamento orgânico">
+                                    Soluções para Pragas
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Plantas que se beneficiam mutuamente">
+                                    Combinações de Plantas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown2
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                    <!-- 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown3
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+            <!-- fim das dropdowns -->
+
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="O quê procura?" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="submit" style="background-color: rgb(91,116,95); border-color: white; color: white;">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+ 
+        {% block meiuca %}{% endblock meiuca %}
+    
+    </div> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer>
+  <H1>teste</H1>
+</footer>
+
+<style>
+    #minhaNavbar {
+        background-color: rgb(91,116,95); 
+    }
+
+    /* Estilo para garantir que as imagens do carrossel preencham bem */
+    .carousel-item img {
+        height: 720px; /* Altura fixa para as imagens do carrossel */
+        object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    }
+
+    /* Estilo para a legenda do carrossel (opcional, para melhor legibilidade) */
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
+
+<script>
+    // Ativa os tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, {
+                trigger: 'hover' // Aparece apenas ao passar o mouse
+            });
+        });
+    });
+</script>
+</html>
