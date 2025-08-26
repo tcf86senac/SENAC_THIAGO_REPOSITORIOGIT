@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Gustu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-principal: #F7F4F0; /* Branco Queimado */
+            --cor-secundaria: #D8D8D8; /* Cinza Areia */
+            --cor-destaque: #EB6F92; /* Rosa Goiaba */
+            --cor-terciaria: #8EAFCB; /* Azul Acinzentado */
+        }
+        
+        body {
+            background-color: var(--cor-principal);
+            color: #333;
+        }
+
+        .navbar {
+            background-color: var(--cor-principal);
+        }
+
+        .navbar-brand img {
+            height: 200px;
+            width: auto;
+            transition: transform 0.8s ease-in-out; /* Adiciona a transição para a animação */
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.11); /* Aumenta a imagem em 5% ao passar o mouse */
+        }
+
+        .btn-link, .nav-link, .dropdown-item {
+            color: #333;
+        }
+
+        .btn-link:hover, .nav-link:hover, .dropdown-item:hover {
+            color: var(--cor-destaque);
+        }
+
+        .btn-busca {
+            background-color: var(--cor-secundaria);
+            border-color: var(--cor-secundaria);
+        }
+
+        .btn-busca:focus {
+            box-shadow: 0 0 0.25rem rgba(216, 216, 216, 0.5);
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card {
+            border: none;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .footer {
+            background-color: var(--cor-terciaria);
+            color: var(--cor-principal);
+        }
+        
+        .menu-faixa {
+            background-color: var(--cor-terciaria);
+        }
+
+        .dropdown-menu {
+            background-color: var(--cor-principal);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--cor-secundaria);
+            color: #333;
+        }
+
+        .dropdown-toggle {
+            color: var(--cor-principal);
+        }
+
+        /* Alteração para as setas do carrossel */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo para as setas */
+            border-radius: 50%;
+            width: 3rem; /* Aumento da largura */
+            height: 3rem; /* Aumento da altura */
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href={% url 'home' %}>
+                    <img src="https://i.imgur.com/ztuX79M.png" alt="Logotipo da Loja" class="img-fluid">
+                </a>
+
+                <div class="d-flex align-items-center flex-grow-1 mx-4">
+                    <form class="d-flex flex-grow-1 me-3" role="search">
+                        <input class="form-control me-2 rounded-pill" type="search" placeholder="Busque por produtos..." aria-label="Search">
+                        <button class="btn btn-busca rounded-pill" type="submit">Buscar</button>
+                    </form>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <a href={% url 'cliente_cadastro' %} class="btn btn-link me-3 text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                        <span class="d-none d-lg-inline-block ms-1">Perfil</span>
+                    </a>
+                    <a href={% url "carrinho" %} class="btn btn-link text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                        <span class="d-none d-lg-inline-block ms-1">Carrinho</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid menu-faixa py-3">
+            <div class="container d-flex justify-content-center">
+                <div class="btn-group mx-4"> 
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Doces
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Bolos</a></li>
+                        <li><a class="dropdown-item" href="#">Brigadeiros</a></li>
+                        <li><a class="dropdown-item" href="#">Tortas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="btn-group mx-4">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Salgados
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Coxinhas</a></li>
+                        <li><a class="dropdown-item" href="#">Empadas</a></li>
+                        <li><a class="dropdown-item" href="#">Pastéis</a></li>
+                    </ul>
+                </div>
+                
+                <div class="btn-group mx-4">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Bebidas
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Café</a></li>
+                        <li><a class="dropdown-item" href="#">Refrigerantes</a></li>
+                        <li><a class="dropdown-item" href="#">Sucos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main> {% block miolo %}{% endblock miolo %}</main>
+    {% comment %} <main class="container my-5">
+        <h2 class="text-center mb-4">Nossos Destaques</h2>
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://via.placeholder.com/400x300?text=Doce+1" class="card-img-top" alt="Doce 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Nome do Doce</h5>
+                                    <p class="card-text">Descrição breve do doce, com alguns detalhes. R$ 9,90</p>
+                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://via.placeholder.com/400x300?text=Salgado+1" class="card-img-top" alt="Salgado 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Nome do Salgado</h5>
+                                    <p class="card-text">Descrição breve do salgado, com alguns detalhes. R$ 7,50</p>
+                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://via.placeholder.com/400x300?text=Bebida+1" class="card-img-top" alt="Bebida 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Nome da Bebida</h5>
+                                    <p class="card-text">Descrição breve da bebida, com alguns detalhes. R$ 5,00</p>
+                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://via.placeholder.com/400x300?text=Doce+2" class="card-img-top" alt="Doce 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Outro Doce</h5>
+                                    <p class="card-text">Mais um doce delicioso para a sua coleção. R$ 12,50</p>
+                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://via.placeholder.com/400x300?text=Salgado+2" class="card-img-top" alt="Salgado 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Outro Salgado</h5>
+                                    <p class="card-text">Mais um salgado imperdível. R$ 8,00</p>
+                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://via.placeholder.com/400x300?text=Bebida+2" class="card-img-top" alt="Bebida 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Outra Bebida</h5>
+                                    <p class="card-text">Mais uma bebida para refrescar. R$ 6,50</p>
+                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </main> {% endcomment %}
+
+    <footer class="footer py-4 mt-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0"><strong>Endereço:</strong> Rua da Confeitaria, 123 - Centro, Cidade - Estado</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-0">
+                        <strong>Contato:</strong>
+                        <a href="tel:+5511999998888" class="text-decoration-none text-light me-3">(11) 99999-8888</a>
+                        <a href="mailto:contato@suaempresa.com" class="text-decoration-none text-light">contato@suaempresa.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

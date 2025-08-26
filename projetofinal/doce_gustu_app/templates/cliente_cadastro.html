@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block miolo %}
+
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card p-4 shadow-sm" style="background-color: #fff;">
+                <h2 class="card-title text-center mb-4">Crie sua Conta</h2>
+                <form>
+                    <div class="mb-3">
+                         <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Endereço de E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+
+                    <h4 class="mt-5 mb-3">Endereços de Entrega</h4>
+                    <div id="enderecos-container">
+                        <div class="endereco-bloco p-3 border rounded mb-3">
+                            <div class="mb-3">
+                                <label for="apelido-1" class="form-label">Apelido do Endereço</label>
+                                <input type="text" class="form-control" id="apelido-1" placeholder="Ex: Casa, Trabalho" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="endereco-1" class="form-label">Rua, Número, Bairro, CEP</label>
+                                <textarea class="form-control" id="endereco-1" rows="2" placeholder="Ex: Rua das Delícias, 123 - Centro - 00000-000" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="referencia-1" class="form-label">Ponto de Referência</label>
+                                <input type="text" class="form-control" id="referencia-1" placeholder="Ex: Próximo à padaria">
+                            </div>
+                            <button type="button" class="btn btn-outline-danger btn-sm d-none">Remover</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mb-4">
+                        <button type="button" class="btn btn-outline-secondary" id="add-endereco">
+                            + Adicionar outro endereço
+                        </button>
+                    </div>
+                        
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Salvar Cadastro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock miolo %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('add-endereco').addEventListener('click', function() {
+            const container = document.getElementById('enderecos-container');
+            const novoIndex = container.children.length + 1;
+            const novoEnderecoHtml = `
+                <div class="endereco-bloco p-3 border rounded mb-3">
+                    <div class="mb-3">
+                        <label for="apelido-${novoIndex}" class="form-label">Apelido do Endereço</label>
+                        <input type="text" class="form-control" id="apelido-${novoIndex}" placeholder="Ex: Casa, Trabalho" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endereco-${novoIndex}" class="form-label">Rua, Número, Bairro, CEP</label>
+                        <textarea class="form-control" id="endereco-${novoIndex}" rows="2" placeholder="Ex: Rua das Delícias, 123 - Centro - 00000-000" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="referencia-${novoIndex}" class="form-label">Ponto de Referência</label>
+                        <input type="text" class="form-control" id="referencia-${novoIndex}" placeholder="Ex: Próximo à padaria">
+                    </div>
+                    <button type="button" class="btn btn-outline-danger btn-sm remover-endereco">Remover</button>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', novoEnderecoHtml);
+
+            document.querySelectorAll('.remover-endereco').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.endereco-bloco').remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

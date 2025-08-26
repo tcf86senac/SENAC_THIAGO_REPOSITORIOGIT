@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block miolo %}
+        <main class="container my-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <img src="https://via.placeholder.com/600x450?text=Croissant" class="img-fluid rounded-3 shadow" alt="Croissant">
+            </div>
+
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bold text-center text-md-start">Croissant Tradicional</h1>
+                <p class="lead text-center text-md-start">Feito com massa folhada de alta qualidade, amanteigada e crocante. Perfeito para qualquer momento do dia.</p>
+                
+                <h2 class="text-center text-md-start mb-4" style="color: var(--cor-destaque);">R$ 8,50</h2>
+
+                <div class="mb-4">
+                    <label for="quantidade" class="form-label d-block text-center text-md-start">Quantidade</label>
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <button class="btn btn-secondary me-2 rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                        <input type="number" id="quantidade" class="form-control text-center w-25" value="1" min="1" max="99">
+                        <button class="btn btn-secondary ms-2 rounded-pill" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="observacoes" class="form-label">Observações:</label>
+                    <textarea class="form-control" id="observacoes" rows="3" placeholder="Ex: Sem recheio, bem assado, etc."></textarea>
+                </div>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-primary btn-lg rounded-pill" style="background-color: var(--cor-destaque); border-color: var(--cor-destaque);">Adicionar ao Carrinho</button>
+                    <a href="carrinho.html" class="btn btn-success btn-lg rounded-pill" style="background-color: var(--cor-terciaria); border-color: var(--cor-terciaria);">Finalizar Compra</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% endblock miolo %}
