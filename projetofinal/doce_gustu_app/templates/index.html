@@ -3,79 +3,50 @@
 {% block miolo %}
     <main class="container my-5">
         <h2 class="text-center mb-4">Nossos Destaques</h2>
+        
+        <!-- O carrossel será preenchido dinamicamente com os produtos de destaque -->
         <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/400x300?text=Doce+1" class="card-img-top" alt="Doce 1">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Nome do Doce</h5>
-                                    <p class="card-text">Descrição breve do doce, com alguns detalhes. R$ 9,90</p>
-                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/400x300?text=Salgado+1" class="card-img-top" alt="Salgado 1">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Nome do Salgado</h5>
-                                    <p class="card-text">Descrição breve do salgado, com alguns detalhes. R$ 7,50</p>
-                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/400x300?text=Bebida+1" class="card-img-top" alt="Bebida 1">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Nome da Bebida</h5>
-                                    <p class="card-text">Descrição breve da bebida, com alguns detalhes. R$ 5,00</p>
-                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="carousel-item">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/400x300?text=Doce+2" class="card-img-top" alt="Doce 2">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Outro Doce</h5>
-                                    <p class="card-text">Mais um doce delicioso para a sua coleção. R$ 12,50</p>
-                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                <!-- A mágica acontece aqui: vamos iterar sobre os produtos de destaque -->
+                {% for produto in produtos_destaque %}
+                    <!-- Para o primeiro item, a classe 'active' é necessária para que ele apareça -->
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                            
+                            <!-- Vamos exibir apenas 1 produto por slide. Você pode ajustar isso se quiser -->
+                            <div class="col">
+                                <div class="card h-100">
+                                    <!-- A URL da imagem vem do banco de dados, do campo 'imagem_url' -->
+                                    <img src="{{ produto.imagem_url }}" class="card-img-top" alt="{{ produto.nome }}">
+                                    
+                                    <div class="card-body text-center">
+                                        <!-- Os dados (nome, descrição, preço) também vêm do banco de dados -->
+                                        <h5 class="card-title">{{ produto.nome }}</h5>
+                                        <p class="card-text">{{ produto.descricao }}</p>
+                                        <p class="card-text">R$ {{ produto.preco }}</p>
+                                        <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/400x300?text=Salgado+2" class="card-img-top" alt="Salgado 2">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Outro Salgado</h5>
-                                    <p class="card-text">Mais um salgado imperdível. R$ 8,00</p>
-                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/400x300?text=Bebida+2" class="card-img-top" alt="Bebida 2">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Outra Bebida</h5>
-                                    <p class="card-text">Mais uma bebida para refrescar. R$ 6,50</p>
-                                    <a href="#" class="btn btn-destaque" style="background-color: var(--cor-destaque); color: #fff;">Comprar</a>
-                                </div>
+                    </div>
+                {% empty %}
+                    <!-- Esta parte será exibida se não houver produtos de destaque cadastrados -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
+                                <p class="text-muted">Nenhum produto em destaque encontrado.</p>
+                                <p>Por favor, adicione produtos no painel de administração e marque a caixa "Destaque".</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
+                
             </div>
             
+            <!-- Controles do carrossel (botões de próxima e anterior) -->
             <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
@@ -87,4 +58,4 @@
             </button>
         </div>
     </main>
-    {% endblock miolo %}
+{% endblock miolo %}

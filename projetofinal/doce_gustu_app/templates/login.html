@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block miolo %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 shadow-sm rounded-3">
+                    <h2 class="card-title text-center mb-4">Acessar minha conta</h2>
+                    
+                    <!-- Formulário de Login -->
+                    <form method="post">
+                        {% csrf_token %}
+                        <!-- Renderiza os campos de login e senha -->
+                        {{ form.as_p }}
+                        
+                        <!-- Botão para submeter o formulário de login -->
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Entrar</button>
+                    </form>
+
+                    <div class="mt-4 text-center">
+                        <hr class="my-3">
+                        <p class="mb-2">Não tem uma conta?</p>
+                        <!-- Link para a página de cadastro -->
+                        <a href="{% url 'doce_gustu_app:cliente_cadastro' %}" class="btn btn-outline-secondary w-100">
+                            Crie sua conta
+                        </a>
+
+                        <!-- Botão que leva para o login do administrador. -->
+                        <hr class="my-3">
+                        <p class="mb-2">Acesso para administradores:</p>
+                        <!-- CORRIGIDO: O link agora aponta para a página de login do admin. -->
+                        <a href="/admin/login/" class="btn btn-outline-danger w-100">
+                            Login do Administrador
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock miolo %}
