@@ -55,7 +55,7 @@ ROOT_URLCONF = 'doce_gustu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], # Adicione esta linha
+        'DIRS': [os.path.join(BASE_DIR, 'doce_gustu_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

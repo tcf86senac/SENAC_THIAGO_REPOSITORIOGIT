@@ -1,70 +1,81 @@
-from django.shortcuts import render
-from .models import Produto
+# DOCE_GUSTO/doce_gustu_app/views.py
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Doce, Salgado, Bebida, Cliente
+from .forms import ClienteCadastroForm # O formulário para o cadastro
 
 # View para a página inicial (Home)
 def home(request):
     """
     Renderiza a página inicial (index.html), buscando e exibindo
-    produtos em destaque e os 3 primeiros produtos de cada categoria.
+    os produtos de cada categoria (doces, salgados, bebidas).
     """
     try:
-        # Filtra os produtos que foram marcados como destaque no painel do administrador.
-        produtos_destaque = Produto.objects.filter(destaque=True)
+        # Busca todos os produtos de cada categoria do banco de dados.
+        doces = Doce.objects.all()
+        salgados = Salgado.objects.all()
+        bebidas = Bebida.objects.all()
     except Exception as e:
-        print(f"Erro ao buscar produtos de destaque: {e}")
-        produtos_destaque = []
-
-    try:
-        # Consulta os 3 primeiros produtos da categoria 'Doce'
-        doces = Produto.objects.filter(categoria='Doce')[:3]
-
-        # Consulta os 3 primeiros produtos da categoria 'Salgado'
-        salgados = Produto.objects.filter(categoria='Salgado')[:3]
-
-        # Consulta os 3 primeiros produtos da categoria 'Bebida'
-        bebidas = Produto.objects.filter(categoria='Bebida')[:3]
-    except Exception as e:
-        print(f"Erro ao buscar produtos por categoria: {e}")
+        # Em caso de erro, por exemplo, se o banco de dados não estiver configurado,
+        # printa o erro e define as listas como vazias para evitar quebra.
+        print(f"Erro ao buscar produtos: {e}")
         doces = []
         salgados = []
         bebidas = []
 
-    # Cria um dicionário (contexto) com todos os dados que serão enviados para o template.
+    # Cria um dicionário (contexto) com os dados que serão enviados para o template.
     contexto = {
-        'produtos_destaque': produtos_destaque,
         'doces': doces,
         'salgados': salgados,
         'bebidas': bebidas,
     }
 
     # Renderiza o template 'index.html' e passa o dicionário de contexto.
-    return render(request, 'index.html', contexto)
+    return render(request, 'doce_gustu_app/index.html', contexto)
 
 # View para a página de carrinho
 def carrinho(request):
     """
     Renderiza a página do carrinho (carrinho.html).
     """
-    return render(request, 'carrinho.html')
+    return render(request, 'doce_gustu_app/carrinho.html')
 
 # View para a página de cadastro de cliente
-def cliente_cadastro(request):
+def cliente_cadastro_view(request):
     """
-    Renderiza a página de cadastro de cliente (cliente_cadastro.html).
+    Função da view para lidar com o cadastro de clientes.
     """
-    return render(request, 'cliente_cadastro.html')
+    # Se o método da requisição for POST, o formulário foi enviado.
+    if request.method == 'POST':
+        # Instancia o formulário com os dados da requisição.
+        form = ClienteCadastroForm(request.POST)
+        # Verifica se o formulário é válido.
+        if form.is_valid():
+            # Se o formulário for válido, salva os dados.
+            # Nota: A lógica de save aqui precisará criar tanto o User quanto o Cliente.
+            form.save()
+            # Adiciona uma mensagem de sucesso para ser exibida ao usuário.
+            messages.success(request, 'Cadastro realizado com sucesso! Faça login para continuar.')
+            # Redireciona para a página de login.
+            return redirect('doce_gustu_app:login')
+    # Se o método for GET ou o formulário for inválido, exibe o formulário vazio ou com erros.
+    else:
+        form = ClienteCadastroForm()
+
+    # Renderiza o template de cadastro e passa o formulário.
+    return render(request, 'doce_gustu_app/cliente_cadastro.html', {'form': form})
 
 # View para a página do cliente logado
 def cliente_logado(request):
     """
     Renderiza a página do cliente logado (cliente_logado.html).
     """
-    return render(request, 'cliente_logado.html')
+    return render(request, 'doce_gustu_app/cliente_logado.html')
 
 # View para a página de detalhes de um produto
 def produto(request):
     """
     Renderiza a página de detalhes do produto (produto.html).
-    Esta view precisará ser aprimorada para exibir um produto específico no futuro.
     """
-    return render(request, 'produto.html')
+    return render(request, 'doce_gustu_app/produto.html')

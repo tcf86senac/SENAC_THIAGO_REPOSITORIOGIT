@@ -14,7 +14,7 @@ urlpatterns = [
     # Mapeia a URL '/carrinho/' para a view carrinho
     path('carrinho/', views.carrinho, name='carrinho'),
     # Mapeia a URL '/cadastro/' para a view cliente_cadastro
-    path('cadastro/', views.cliente_cadastro, name='cliente_cadastro'),
+    path('cadastro/', views.cliente_cadastro_view, name='cliente_cadastro'),
     # Mapeia a URL '/cliente/' para a view cliente_logado
     path('cliente/', views.cliente_logado, name='cliente_logado'),
     # Mapeia a URL '/produto/' para a view produto

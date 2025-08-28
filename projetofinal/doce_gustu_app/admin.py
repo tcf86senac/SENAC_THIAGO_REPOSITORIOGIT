@@ -1,6 +1,9 @@
 from django.contrib import admin
-from .models import Produto, Item # Importe também o modelo Item se quiser que ele apareça
+# Importamos os modelos que criamos em models.py
+from .models import Doce, Salgado, Bebida, Cliente
 
-# Registra os seus modelos para que apareçam no painel de administração
-admin.site.register(Produto)
-admin.site.register(Item)
+# Registramos os modelos para que eles apareçam no painel de administração do Django.
+admin.site.register(Doce)
+admin.site.register(Salgado)
+admin.site.register(Bebida)
+admin.site.register(Cliente)
